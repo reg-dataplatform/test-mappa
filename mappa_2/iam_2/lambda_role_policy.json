@@ -1,0 +1,35 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "Stmt1584012410348",
+            "Action": "s3:*",
+            "Effect": "Allow",
+            "Resource": "*"
+        },
+        {
+            "Sid": "Stmt1584012653653",
+            "Action": "logs:*",
+            "Effect": "Allow",
+            "Resource": "*"
+        },
+        {
+            "Sid": "Stmt1586924214270",
+            "Action": "ssm:*",
+            "Effect": "Allow",
+            "Resource": "*"
+        },
+        {
+            "Sid": "StmtLambdaGlue",
+            "Action": "glue:*",
+            "Effect": "Allow",
+            "Resource": "*"
+        },
+        {
+            "Sid": "StmtLambdaAthena",
+            "Action": "athena:*",
+            "Effect": "Allow",
+            "Resource": "*"
+        }
+    ]
+}
