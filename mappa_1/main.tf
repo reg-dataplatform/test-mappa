@@ -34,3 +34,17 @@ module "lambda_1" {
   module_name                  = "lambda_test_mappa_1"
   timeout                      = 60
 }
+
+module "lambda_1_2" {
+  source                       = "git::https://github.com/reg-dataplatform/reg-aws-terraform-library//lambda/function?ref=0.35.dev"
+  providers                    = {aws = aws}
+  env                          = var.env
+  parent_module_path           = var.project_name
+  iam_role_arn                 = module.iam_1.arn
+  lambda_script_source_dir     = join("", [path.module, "/lambda_1"])
+  lambda_script_output_path    = join("", [path.module, "/zip_package_1/"])
+  lambda_handler               = "lambda_1.lambda_handler"
+  resource_tags                = local.resource_tags
+  module_name                  = "lambda_test_mappa_1_2"
+  timeout                      = 60
+}
